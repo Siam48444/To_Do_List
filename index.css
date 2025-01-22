@@ -1,0 +1,280 @@
+@font-face {
+    font-family: Lexend_Regular;
+    src: url(Fonts/Lexend-Regular.ttf);
+}
+@font-face {
+    font-family: Lexend_Medium;
+    src: url(Fonts/Lexend-Medium.ttf);
+}
+@font-face {
+    font-family: Lexend_Bold;
+    src: url(Fonts/Lexend-Bold.ttf);
+}
+
+:root {
+    /* Colors */
+    --color_light: rgb(250, 250, 250);
+    --color_dark: rgb(10, 10, 10);
+    --color_unfocused_text: rgb(140, 140, 140);
+    --color_hover_border: rgb(200, 200, 200);
+
+    /* Font Sizes */
+    --font_size_primary: 1em;
+    --font_size_heading: 3em;
+
+    /* Transitions */
+    --transition_duration: 300ms;
+}
+
+.darkmode {
+    --color_light: rgb(30, 30, 30);
+    --color_dark: rgb(250, 250, 250);
+    --color_unfocused_text: rgb(200, 200, 200);
+    --color_hover_border: rgb(100, 100, 100);
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+
+    transition: 
+        background-color var(--transition_duration), 
+        color var(--transition_duration), 
+        border-color var(--transition_duration);
+}
+
+body, 
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    transition: none;
+    background-color: var(--color_light);
+
+    transition: background-color var(--transition_duration);
+}
+
+main {
+    position: relative;
+    min-height: 100vh;
+    background-color: var(--color_light);
+    width: min(100%, 1500px);
+    margin: auto;
+    padding: 5em 10em;
+}
+
+.heading {
+    margin-bottom: 4em;
+}
+
+.heading_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.heading_top h1 {
+    font-family: Lexend_Bold;
+    font-size: var(--font_size_heading);
+    color: var(--color_dark);
+}
+
+#appearance_btn {
+    width: 1.5em;
+    aspect-ratio: 1;
+    cursor: pointer;
+    background-color: transparent;
+    border: solid var(--color_dark) 0.01em;
+    position: relative;
+}
+
+#appearance_btn span {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: var(--color_dark);
+}
+
+.adding_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    width: 70%;
+    margin-top: 1em;
+}
+
+#input_box, 
+#add_btn {
+    background-color: transparent;
+    border: solid var(--color_dark) 0.01em;
+    outline: none;
+    padding: 0.6em 1.2em;
+    color: var(--color_dark);
+    font-size: var(--font_size_primary);
+    font-family: Lexend_Regular;
+}
+
+#input_box {
+    flex: 1;
+}
+
+#input_box::placeholder {
+    color: var(--color_unfocused_text);
+}
+
+#add_btn {
+    cursor: pointer;
+}
+
+#appearance_btn:active,
+#input_box:focus,
+#add_btn:active,
+ul li span:active {
+    outline: solid var(--color_dark) 0.1em;
+}
+
+ul li {
+    list-style: none;
+    position: relative;
+    padding-block: 0.8em;
+    padding-inline: 3em;
+    border-block: solid transparent 0.01em;
+    color: var(--color_dark);
+    font-size: var(--font_size_primary);
+    font-family: Lexend_Regular;
+    cursor: pointer;
+}
+
+@media (width > 1000px) {
+    #add_btn:hover,
+    ul li span:hover {
+        background-color: var(--color_dark);
+        color: var(--color_light);
+    }
+
+    ul li:hover {
+        border-color: var(--color_hover_border);
+    }
+}
+
+ul li:active {
+    border-block: solid var(--color_dark) 0.1em;
+}
+
+ul li:before,
+ul li span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul li::before {
+    position: absolute;
+    content: "✔";
+    color: var(--color_light);
+    font-size: 90%;
+    font-weight: 800;
+    font-family: Lexend_Bold;
+    border: solid var(--color_dark) 0.01em;
+    cursor: pointer;
+    inset: 20% auto 20% 0;
+    aspect-ratio: 1;
+}
+
+ul li span {
+    position: absolute;
+    color: var(--color_dark);
+    font-size: 90%;
+    font-weight: 800;
+    font-family: Lexend_Bold;
+    border: solid var(--color_dark) 0.01em;
+    cursor: pointer;
+    inset: 20% 0 20% auto;
+    aspect-ratio: 1;
+}
+
+.checked_task {
+    color: var(--color_unfocused_text);
+    text-decoration: line-through;
+}
+
+.checked_task::before {
+    background-color: var(--color_dark);
+}
+
+.removed_task {
+    pointer-events: none;
+    opacity: 0;
+    scale: 0.96;
+
+    animation: removed 0ms calc(var(--transition_duration) - 100ms) forwards;
+    
+    transition: 
+        opacity var(--transition_duration),
+        scale var(--transition_duration);
+}
+
+/* Completely delete the removed task from the html after a small delay */
+@keyframes removed {
+    to {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media (width < 1000px) {
+    main {
+        padding: 4em;
+    }
+
+}
+
+@media (width < 800px) {
+    #input_box,
+    #add_btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (width < 700px) {
+    :root {
+        /* Font Sizes */
+        --font_size_primary: 1em;
+        --font_size_heading: 2.5em;
+    }
+
+    main {
+        padding: 2em;
+    }
+
+    .heading {
+        margin-bottom: 2em;
+    }
+
+    .adding_section {
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+    }
+}
+
+@media (width < 400px) {
+    .heading_top h1 {
+        font-size: 2em;
+    }
+}
