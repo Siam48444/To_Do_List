@@ -1,18 +1,17 @@
-const input_box = document.querySelector(".input_box");
 const add_btn = document.querySelector(".add_btn");
 const task_container = document.querySelector(".task_container");
 
 
 
 // Add tasks to the task container
-add_btn.addEventListener("click", () => {
-    add_task(input_box);
-});
+add_btn.addEventListener("click", add_task);
 
 
 
 // Create and append task
-function add_task(input_box) {
+function add_task() {
+    const input_box = document.querySelector(".input_box");
+
     if (input_box.value.trim() === "") {
         show_input_error(input_box, "Please enter a task first!");
         return;
