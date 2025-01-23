@@ -1,3 +1,4 @@
+// Selectors
 const input_box = document.querySelector(".input_box");
 const add_btn = document.querySelector(".add_btn");
 const task_container = document.querySelector(".task_container");
@@ -18,7 +19,6 @@ function show_input_error(input_box, error_message) {
 
 // Add tasks to the task container
 add_btn.addEventListener("click", function () {
-    // Handle an empty input
     if (input_box.value.trim() === "") {
         show_input_error(input_box, "Please enter a task first!");
         return;
