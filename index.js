@@ -34,6 +34,8 @@ function add_task() {
         input_box.value = "";
         input_box.setAttribute("placeholder", "Add your task...");
     }
+
+    save_data();
 }
 
 
@@ -65,3 +67,9 @@ task_container.addEventListener("click", function(e) {
         e.target.parentElement.classList.add("removed_task");
     }
 });
+
+
+
+function save_data() {
+    localStorage.setItem("data", task_container.innerHTML);
+}
