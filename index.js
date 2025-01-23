@@ -3,21 +3,24 @@ const add_btn = document.querySelector(".add_btn");
 const task_container = document.querySelector(".task_container");
 
 
+// Handle an empty input error
+function show_input_error(input_box, error_message) {
+    // Add the error class to the input box
+    input_box.classList.add("input_error");
+    input_box.setAttribute("placeholder", error_message);
 
+    // Remove the error class after a delay
+    setTimeout(() => {
+        input_box.classList.remove("input_error");
+    }, 300);
+}
 
 
 // Add tasks to the task container
 add_btn.addEventListener("click", function () {
     // Handle an empty input
     if (input_box.value.trim() === "") {
-        // Add the error class to the input box
-        input_box.classList.add("input_error");
-        input_box.setAttribute("placeholder", "Please enter a task first!");
-
-        // Remove the error class from the input box
-        setTimeout(() => {
-            input_box.classList.remove("input_error");
-        }, 500);
+        show_input_error(input_box, "Please enter a task first!");
         return;
     }
 

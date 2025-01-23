@@ -129,6 +129,14 @@ main {
     flex: 1;
 }
 
+/* Error class for an empty input */
+.input_error {
+    outline: solid var(--color_error) 0.1em;
+    border-color: var(--color_error);
+
+    animation: shake 200ms ease-in-out;
+}
+
 @keyframes shake {
     25% {transform: translateX(0.5em);}
     75% {transform: translateX(-0.5em);}
@@ -147,14 +155,6 @@ main {
 .add_btn:active,
 ul li span:active {
     outline: solid var(--color_dark) 0.1em;
-}
-
-/* Error class for an empty input */
-.input_error {
-    outline: solid var(--color_error) 0.1em;  
-    border-color: var(--color_error);
-
-    animation: shake 200ms ease-in-out;
 }
 
 ul li {
