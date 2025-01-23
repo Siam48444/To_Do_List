@@ -17,7 +17,8 @@
     --color_dark: rgb(10, 10, 10);
     --color_unfocused_text: rgb(140, 140, 140);
     --color_hover_border: rgb(200, 200, 200);
-
+    --color_error: rgb(222, 0, 0);
+    
     /* Font Sizes */
     --font_size_primary: 1em;
     --font_size_heading: 3em;
@@ -34,6 +35,7 @@
     --color_dark: rgb(250, 250, 250);
     --color_unfocused_text: rgb(200, 200, 200);
     --color_hover_border: rgb(100, 100, 100);
+    --color_error: rgb(222, 0, 0);
 }
 
 *,
@@ -140,6 +142,12 @@ main {
 #add_btn:active,
 ul li span:active {
     outline: solid var(--color_dark) 0.1em;
+}
+
+/* Error input class for an empty input */
+.input_error {
+    border-color: var(--color_error);
+    outline: none;
 }
 
 ul li {
@@ -265,7 +273,7 @@ ul li span {
     .adding_section {
         flex-direction: column;
         align-items: start;
-        gap: 0.5em;
+        gap: 0.8em;
         width: 100%;
     }
 
