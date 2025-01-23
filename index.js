@@ -18,10 +18,10 @@ function show_input_error(input_box, error_message) {
 
 
 // Create and append task
-function append_task(input_value, task_container) {
+function append_task(input_value) {
     var li = document.createElement("li");
     li.textContent = input_value;
-    task_container.appendChild(li);  
+    document.querySelector(".task_container").appendChild(li);  
     
     // Create and append a cancel button
     var span = document.createElement("span");
@@ -32,13 +32,15 @@ function append_task(input_value, task_container) {
 
 // Add tasks to the task container
 add_btn.addEventListener("click", function () {
+    // Handle input error
     if (input_box.value.trim() === "") {
         show_input_error(input_box, "Please enter a task first!");
         return;
     }
 
+    // Append task
     else {
-        append_task(input_box.value, task_container);
+        append_task(input_box.value);
     }
     
     // Reset the input box

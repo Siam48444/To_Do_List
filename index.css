@@ -131,15 +131,16 @@ main {
 
 /* Error class for an empty input */
 .input_error {
-    outline: solid var(--color_error) 0.1em;
     border-color: var(--color_error);
+    outline: solid var(--color_error) 0.1em;
+    transition: none;
 
     animation: shake 200ms ease-in-out;
 }
 
 @keyframes shake {
-    25% {transform: translateX(0.5em);}
-    75% {transform: translateX(-0.5em);}
+    35% {transform: translateX(0.5em);}
+    65% {transform: translateX(-0.5em);}
 }
 
 .input_box::placeholder {
