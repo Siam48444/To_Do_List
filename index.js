@@ -9,6 +9,7 @@ const task_container = document.querySelector(".task_container");
 function show_input_error(input_box, error_message) {
     // Add the error class to the input box
     input_box.classList.add("input_error");
+    input_box.value = "";
     input_box.setAttribute("placeholder", error_message);
 
     // Remove the error class after a delay
@@ -44,11 +45,12 @@ add_btn.addEventListener("click", function () {
     // Append task
     else {
         append_task(input_box.value);
+        
+        // Reset the input box
+        input_box.value = "";
+        input_box.setAttribute("placeholder", "Add your task...");
     }
     
-    // Reset the input box
-    input_box.value = "";
-    input_box.setAttribute("placeholder", "Add your task...");
 });
 
 
