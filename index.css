@@ -12,21 +12,17 @@
 }
 
 :root {
-    /* Colors */
     --color_light: rgb(250, 250, 250);
     --color_dark: rgb(20, 20, 20);
     --color_unfocused_text: rgb(140, 140, 140);
     --color_hover_border: rgb(200, 200, 200);
     --color_error: rgb(250, 50, 40);
     
-    /* Font Sizes */
     --font_size_primary: 1em;
     --font_size_heading: 3em;
 
-    /* Paddings and Margins */
     --padding_main: 5em 10em;
 
-    /* Transitions */
     --transition_duration: 300ms;
 }
 
@@ -257,18 +253,15 @@ ul li span {
 /* Media Queries */
 @media (width < 1000px) {
     :root {
-        /* Paddings */
         --padding_main: 4em;
     }
 }
 
 @media (width < 700px) {
     :root {
-        /* Font Sizes */
         --font_size_primary: 1em;
         --font_size_heading: 2.5em;
 
-        /* Paddings */
         --padding_main: 2em;
     }
 
