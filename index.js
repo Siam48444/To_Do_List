@@ -17,6 +17,19 @@ function show_input_error(input_box, error_message) {
 }
 
 
+// Create and append task
+function append_task(input_value, task_container) {
+    var li = document.createElement("li");
+    li.textContent = input_value;
+    task_container.appendChild(li);  
+    
+    // Create and append a cancel button
+    var span = document.createElement("span");
+    span.textContent = "✖";
+    li.appendChild(span);
+}
+
+
 // Add tasks to the task container
 add_btn.addEventListener("click", function () {
     if (input_box.value.trim() === "") {
@@ -25,15 +38,7 @@ add_btn.addEventListener("click", function () {
     }
 
     else {
-        // Create and append task
-        var li = document.createElement("li");
-        li.textContent = input_box.value;
-        task_container.appendChild(li);  
-        
-        // Create and append a cancel button
-        var span = document.createElement("span");
-        span.textContent = "✖";
-        li.appendChild(span);
+        append_task(input_box.value, task_container);
     }
     
     // Reset the input box
