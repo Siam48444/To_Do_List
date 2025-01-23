@@ -1,4 +1,3 @@
-// Selectors
 const input_box = document.querySelector(".input_box");
 const add_btn = document.querySelector(".add_btn");
 const task_container = document.querySelector(".task_container");

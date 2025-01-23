@@ -22,6 +22,7 @@
     --font_size_heading: 3em;
 
     --padding_main: 5em 10em;
+    --padding_buttons: 0.6em 1.2em;
 
     --transition_duration: 300ms;
 }
@@ -115,7 +116,7 @@ main {
     background-color: transparent;
     border: solid var(--color_dark) 0.01em;
     outline: none;
-    padding: 0.6em 1.2em;
+    padding: var(--padding_buttons);
     color: var(--color_dark);
     font-size: var(--font_size_primary);
     font-family: Lexend_Regular;
