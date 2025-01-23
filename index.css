@@ -110,7 +110,7 @@ main {
     align-items: center;
     justify-content: space-between;
     gap: 0.5em;
-    width: 70%;
+    width: 75%;
     margin-top: 1em;
 }
 
@@ -129,6 +129,10 @@ main {
     flex: 1;
 }
 
+.input_box::placeholder {
+    color: var(--color_unfocused_text);
+}
+
 /* Error class for an empty input */
 .input_error {
     border-color: var(--color_error);
@@ -139,12 +143,8 @@ main {
 }
 
 @keyframes shake {
-    35% {transform: translateX(0.5em);}
-    65% {transform: translateX(-0.5em);}
-}
-
-.input_box::placeholder {
-    color: var(--color_unfocused_text);
+    30% {transform: translateX(0.3em);}
+    70% {transform: translateX(-0.3em);}
 }
 
 .add_btn {
@@ -168,6 +168,8 @@ ul li {
     font-size: var(--font_size_primary);
     font-family: Lexend_Regular;
     cursor: pointer;
+
+    overflow: hidden;
 }
 
 @media (width > 1000px) {
@@ -197,8 +199,7 @@ ul li::before {
     position: absolute;
     content: "✔";
     color: var(--color_light);
-    font-size: 90%;
-    font-weight: 800;
+    font-size: var(--font_size_primary);
     font-family: Lexend_Bold;
     border: solid var(--color_dark) 0.01em;
     cursor: pointer;
@@ -209,8 +210,7 @@ ul li::before {
 ul li span {
     position: absolute;
     color: var(--color_dark);
-    font-size: 90%;
-    font-weight: 800;
+    font-size: var(--font_size_primary);
     font-family: Lexend_Bold;
     border: solid var(--color_dark) 0.01em;
     cursor: pointer;
