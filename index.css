@@ -89,7 +89,7 @@ main {
     color: var(--color_dark);
 }
 
-#appearance_btn {
+.appearance_btn {
     width: 1.5em;
     aspect-ratio: 1;
     cursor: pointer;
@@ -98,7 +98,7 @@ main {
     position: relative;
 }
 
-#appearance_btn span {
+.appearance_btn span {
     position: absolute;
     width: 50%;
     height: 100%;
@@ -114,8 +114,8 @@ main {
     margin-top: 1em;
 }
 
-#input_box, 
-#add_btn {
+.input_box, 
+.add_btn {
     background-color: transparent;
     border: solid var(--color_dark) 0.01em;
     outline: none;
@@ -125,29 +125,36 @@ main {
     font-family: Lexend_Regular;
 }
 
-#input_box {
+.input_box {
     flex: 1;
 }
 
-#input_box::placeholder {
+@keyframes shake {
+    25% {transform: translateX(0.5em);}
+    75% {transform: translateX(-0.5em);}
+}
+
+.input_box::placeholder {
     color: var(--color_unfocused_text);
 }
 
-#add_btn {
+.add_btn {
     cursor: pointer;
 }
 
-#appearance_btn:active,
-#input_box:focus,
-#add_btn:active,
+.appearance_btn:active,
+.input_box:focus,
+.add_btn:active,
 ul li span:active {
     outline: solid var(--color_dark) 0.1em;
 }
 
-/* Error input class for an empty input */
+/* Error class for an empty input */
 .input_error {
+    outline: solid var(--color_error) 0.1em;  
     border-color: var(--color_error);
-    outline: none;
+
+    animation: shake 200ms ease-in-out;
 }
 
 ul li {
@@ -163,7 +170,7 @@ ul li {
 }
 
 @media (width > 1000px) {
-    #add_btn:hover,
+    .add_btn:hover,
     ul li span:hover {
         background-color: var(--color_dark);
         color: var(--color_light);
@@ -277,8 +284,8 @@ ul li span {
         width: 100%;
     }
 
-    #input_box,
-    #add_btn {
+    .input_box,
+    .add_btn {
         width: 100%;
         text-align: center;
     }
