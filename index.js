@@ -1,10 +1,14 @@
 const add_btn = document.querySelector(".add_btn");
+const input_box = document.querySelector(".input_box");
 const task_container = document.querySelector(".task_container");
 
 
 
 // Add tasks to the task container
 add_btn.addEventListener("click", add_task);
+input_box.addEventListener("keydown", function (e) {
+    e.key === "Enter" && add_task();
+});
 
 
 
