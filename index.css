@@ -24,6 +24,8 @@
     --padding_main: 5em 10em;
     --padding_buttons: 0.6em 1.2em;
 
+    --width_appearance_button: 1.6em;
+
     --transition_duration: 300ms;
 }
 
@@ -84,10 +86,11 @@ main {
     font-family: Lexend_Bold;
     font-size: var(--font_size_heading);
     color: var(--color_dark);
+    line-height: 1;
 }
 
 .appearance_btn {
-    width: 1.5em;
+    width: var(--width_appearance_button);
     aspect-ratio: 1;
     cursor: pointer;
     background-color: transparent;
@@ -263,7 +266,7 @@ ul li span {
 
 @media (width < 700px) {
     :root {
-        --padding_main: 2em;
+        --padding_main: 1.5em;
     }
 
     .adding_section {
@@ -271,7 +274,13 @@ ul li span {
     }
 }
 
-@media (width < 600px) {
+@media (width < 500px) {
+    :root {
+        --font_size_heading: 2.5em;
+
+        --width_appearance_button: 1.4em;
+    }
+
     .adding_section {
         flex-direction: column;
     }
