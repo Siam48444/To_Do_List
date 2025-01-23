@@ -30,6 +30,7 @@ function append_task(input_value) {
     var span = document.createElement("span");
     span.textContent = "✖";
     li.appendChild(span);
+    
 }
 
 
