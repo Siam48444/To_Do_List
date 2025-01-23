@@ -4,6 +4,24 @@ const task_container = document.querySelector(".task_container");
 
 
 
+// Add tasks to the task container
+add_btn.addEventListener("click", () => {
+    if (input_box.value.trim() === "") {
+        show_input_error(input_box, "Please enter a task first!");
+        return;
+    }
+    else {
+        add_task(input_box.value);
+        
+        // Reset the input box
+        input_box.value = "";
+        input_box.setAttribute("placeholder", "Add your task...");
+    }
+    
+});
+
+
+
 // Handle an empty input error
 function show_input_error(input_box, error_message) {
     // Add the error class to the input box
@@ -20,7 +38,7 @@ function show_input_error(input_box, error_message) {
 
 
 // Create and append task
-function append_task(input_value) {
+function add_task(input_value) {
     var li = document.createElement("li");
     li.textContent = input_value;
     document.querySelector(".task_container").appendChild(li);  
@@ -29,26 +47,7 @@ function append_task(input_value) {
     var span = document.createElement("span");
     span.textContent = "✖";
     li.appendChild(span);
-    
 }
-
-
-
-// Add tasks to the task container
-add_btn.addEventListener("click", function () {
-    if (input_box.value.trim() === "") {
-        show_input_error(input_box, "Please enter a task first!");
-        return;
-    }
-    else {
-        append_task(input_box.value);
-        
-        // Reset the input box
-        input_box.value = "";
-        input_box.setAttribute("placeholder", "Add your task...");
-    }
-    
-});
 
 
 
