@@ -6,8 +6,8 @@ const task_container = document.querySelector("#task_container");
 // Add tasks to the task container
 add_btn.addEventListener("click", function () {
     // Handle an empty input
-    if (input_box.value === "") {
-        input_box.setAttribute("placeholder", "Please enter a task first!");
+    if (input_box.value.trim() === "") {
+        input_box.classList.add("input_error");
         return;
     }
 
@@ -25,7 +25,6 @@ add_btn.addEventListener("click", function () {
     
     // Reset the input box
     input_box.value = "";
-    input_box.setAttribute("placeholder", "Add your task...");
 });
 
 
