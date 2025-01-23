@@ -168,8 +168,6 @@ ul li {
     font-size: var(--font_size_primary);
     font-family: Lexend_Regular;
     cursor: pointer;
-
-    overflow: hidden;
 }
 
 @media (width > 1000px) {
