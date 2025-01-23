@@ -1,9 +1,10 @@
 const appearance_btn = document.querySelector(".appearance_btn");
+var theme = localStorage.getItem("theme");
 
 
 
 // Check for the dark mode when the page loads
-localStorage.getItem("theme") === "darkmode" && document.body.classList.add("darkmode");
+theme === "darkmode" && document.body.classList.add("darkmode");
 
 
 

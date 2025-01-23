@@ -192,29 +192,26 @@ ul li span {
     display: flex;
     align-items: center;
     justify-content: center;
+    aspect-ratio: 1;
+    cursor: pointer;
+    position: absolute;
 }
 
 ul li::before {
-    position: absolute;
     content: "✔";
     color: var(--color_light);
     font-size: var(--font_size_primary);
     font-family: Lexend_Bold;
     border: solid var(--color_dark) 0.01em;
-    cursor: pointer;
     inset: 20% auto 20% 0;
-    aspect-ratio: 1;
 }
 
 ul li span {
-    position: absolute;
     color: var(--color_dark);
     font-size: var(--font_size_primary);
     font-family: Lexend_Bold;
     border: solid var(--color_dark) 0.01em;
-    cursor: pointer;
     inset: 20% 0 20% auto;
-    aspect-ratio: 1;
 }
 
 .checked_task {
@@ -275,7 +272,8 @@ ul li span {
 
 @media (width < 500px) {
     :root {
-        --font_size_heading: 2.5em;
+        --font_size_primary: 0.9em;
+        --font_size_heading: 2em;
 
         --width_appearance_button: 1.4em;
     }
