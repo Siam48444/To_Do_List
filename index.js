@@ -4,6 +4,7 @@ const add_btn = document.querySelector(".add_btn");
 const task_container = document.querySelector(".task_container");
 
 
+
 // Handle an empty input error
 function show_input_error(input_box, error_message) {
     // Add the error class to the input box
@@ -17,6 +18,7 @@ function show_input_error(input_box, error_message) {
 }
 
 
+
 // Create and append task
 function append_task(input_value) {
     var li = document.createElement("li");
@@ -28,6 +30,7 @@ function append_task(input_value) {
     span.textContent = "✖";
     li.appendChild(span);
 }
+
 
 
 // Add tasks to the task container
@@ -47,6 +50,7 @@ add_btn.addEventListener("click", function () {
     input_box.value = "";
     input_box.setAttribute("placeholder", "Add your task...");
 });
+
 
 
 // Check, uncheck or remove tasks from the task container
