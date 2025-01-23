@@ -183,7 +183,7 @@ ul li {
 }
 
 ul li:active {
-    border-block: solid var(--color_dark) 0.1em;
+    border-block: solid var(--color_dark) 0.01em;
 }
 
 ul li:before,
@@ -254,7 +254,7 @@ ul li span {
 
 
 
-
+/* Media Queries */
 @media (width < 1000px) {
     :root {
         /* Paddings */
