@@ -1,5 +1,5 @@
 // Selectors
-const appearance_btn = document.querySelector("#appearance_btn");
+const appearance_btn = document.querySelector(".appearance_btn");
 
 
 

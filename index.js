@@ -36,13 +36,10 @@ function append_task(input_value) {
 
 // Add tasks to the task container
 add_btn.addEventListener("click", function () {
-    // Handle input error
     if (input_box.value.trim() === "") {
         show_input_error(input_box, "Please enter a task first!");
         return;
     }
-
-    // Append task
     else {
         append_task(input_box.value);
         
