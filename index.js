@@ -6,20 +6,20 @@ const task_container = document.querySelector(".task_container");
 
 // Add tasks to the task container
 add_btn.addEventListener("click", () => {
-    add_task(input_box, input_box.value);
+    add_task(input_box);
 });
 
 
 
 // Create and append task
-function add_task(input_box, input_value) {
-    if (input_value.trim() === "") {
+function add_task(input_box) {
+    if (input_box.value.trim() === "") {
         show_input_error(input_box, "Please enter a task first!");
         return;
     }
     else {
         var li = document.createElement("li");
-        li.textContent = input_value;
+        li.textContent = input_box.value;
         document.querySelector(".task_container").appendChild(li);  
         
         // Create and append a cancel button
@@ -28,7 +28,7 @@ function add_task(input_box, input_value) {
         li.appendChild(span);
         
         // Reset the input box
-        input_value = "";
+        input_box.value = "";
         input_box.setAttribute("placeholder", "Add your task...");
     }
 }
