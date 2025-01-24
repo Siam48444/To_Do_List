@@ -16,7 +16,6 @@
     --color_dark: rgb(20, 20, 20);
     --color_unfocused_text: rgb(140, 140, 140);
     --color_hover_border: rgb(200, 200, 200);
-    --color_error: rgb(250, 50, 40);
     
     --font_size_primary: 1em;
     --font_size_heading: 3em;
@@ -34,7 +33,6 @@
     --color_dark: rgb(250, 250, 250);
     --color_unfocused_text: rgb(200, 200, 200);
     --color_hover_border: rgb(100, 100, 100);
-    --color_error: rgb(250, 50, 40);
 }
 
 *,
@@ -136,16 +134,15 @@ main {
 
 /* Error class for an empty input */
 .input_error {
-    border-color: var(--color_error);
-    outline: solid var(--color_error) 0.1em;
+    outline: solid var(--color_dark) 0.1em;
     transition: none;
 
     animation: shake 200ms ease-in-out;
 }
 
 @keyframes shake {
-    30% {transform: translateX(0.3em);}
-    70% {transform: translateX(-0.3em);}
+    30% {transform: translateX(0.5em);}
+    70% {transform: translateX(-0.5em);}
 }
 
 .add_btn {
@@ -228,7 +225,7 @@ ul li span {
     opacity: 0;
     scale: 0.96;
 
-    animation: removed 0ms var(--transition_duration) forwards;
+    animation: removed 0ms calc(var(--transition_duration) - 100ms) forwards;
     
     transition: 
         opacity var(--transition_duration),

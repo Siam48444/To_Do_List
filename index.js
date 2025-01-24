@@ -14,10 +14,8 @@ input_box.addEventListener("keydown", function (e) {
 
 // Create and append task
 function add_task() {
-    const input_box = document.querySelector(".input_box");
-
     if (input_box.value.trim() === "") {
-        show_input_error(input_box, "Please enter a task first!");
+        show_input_error("Please enter a task first!");
         return;
     }
     else {
@@ -41,7 +39,7 @@ function add_task() {
 
 
 // Handle an empty input error
-function show_input_error(input_box, error_message) {
+function show_input_error(error_message) {
     // Add the error class to the input box
     input_box.classList.add("input_error");
     input_box.value = "";
@@ -66,10 +64,14 @@ task_container.addEventListener("click", function(e) {
     else if (e.target.tagName === "SPAN") {
         e.target.parentElement.classList.add("removed_task");
     }
+
+    save_data();
 });
 
 
 
+// Save the tasks in the local storage
 function save_data() {
     localStorage.setItem("data", task_container.innerHTML);
+    // localStorage.clear();
 }
