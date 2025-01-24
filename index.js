@@ -5,7 +5,8 @@ const task_container = document.querySelector(".task_container");
 
 
 // Check if there's any task when the page loads
-
+let data = localStorage.getItem("data");
+data && (task_container.innerHTML = data);
 
 
 
@@ -67,7 +68,7 @@ task_container.addEventListener("click", function(e) {
 
     // Remove tasks
     else if (e.target.tagName === "SPAN") {
-        e.target.parentElement.classList.add("removed_task");
+        e.target.parentElement.remove();
     }
 
     save_data();
@@ -78,6 +79,4 @@ task_container.addEventListener("click", function(e) {
 // Save the tasks in the local storage
 function save_data() {
     localStorage.setItem("data", task_container.innerHTML);
-    
-    // localStorage.clear();
 }

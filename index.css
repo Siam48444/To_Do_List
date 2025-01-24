@@ -220,24 +220,7 @@ ul li span {
     background-color: var(--color_dark);
 }
 
-.removed_task {
-    pointer-events: none;
-    opacity: 0;
-    scale: 0.96;
 
-    animation: removed 0ms calc(var(--transition_duration) - 100ms) forwards;
-    
-    transition: 
-        opacity var(--transition_duration),
-        scale var(--transition_duration);
-}
-
-/* Completely delete the removed task from the html after a small delay */
-@keyframes removed {
-    to {
-        display: none;
-    }
-}
 
 
 
