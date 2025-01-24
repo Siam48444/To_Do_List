@@ -4,6 +4,11 @@ const task_container = document.querySelector(".task_container");
 
 
 
+// Check if there's any task when the page loads
+
+
+
+
 // Add tasks to the task container
 add_btn.addEventListener("click", add_task);
 input_box.addEventListener("keydown", function (e) {
@@ -73,5 +78,6 @@ task_container.addEventListener("click", function(e) {
 // Save the tasks in the local storage
 function save_data() {
     localStorage.setItem("data", task_container.innerHTML);
+    
     // localStorage.clear();
 }
