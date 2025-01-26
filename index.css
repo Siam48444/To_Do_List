@@ -223,11 +223,11 @@ ul li span {
 .removed_task {
     pointer-events: none;
     opacity: 0;
-    scale: 0.96;
+    transform: translateX(1.2%);
 
     transition: 
         opacity var(--transition_duration),
-        scale var(--transition_duration);
+        transform var(--transition_duration);
 }
 
 
