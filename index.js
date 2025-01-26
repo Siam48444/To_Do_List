@@ -68,7 +68,12 @@ task_container.addEventListener("click", function(e) {
 
     // Remove tasks
     else if (e.target.tagName === "SPAN") {
-        e.target.parentElement.remove();
+        e.target.parentElement.classList.add("removed_task");
+
+        // Remove the task completely from the html
+        setTimeout(() => {
+            e.target.parentElement.remove();
+        }, 300);
     }
 
     save_data();

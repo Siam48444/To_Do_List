@@ -220,7 +220,15 @@ ul li span {
     background-color: var(--color_dark);
 }
 
+.removed_task {
+    pointer-events: none;
+    opacity: 0;
+    scale: 0.96;
 
+    transition: 
+        opacity var(--transition_duration),
+        scale var(--transition_duration);
+}
 
 
 
